@@ -23,7 +23,9 @@ classfy函数
 """
 #!/usr/bin/python
 from numpy import *
+from numpy.ma import exp
 from os import listdir
+
 
 
 def loadData(direction):
@@ -81,12 +83,16 @@ def classfy(testdir,weigh):
                 print 'error'
     print 'error rate is:','%.4f' %(error/m)
                 
-def digitRecognition(trainDir,testDir,alpha=0.07,maxCycles=10):
+def digitRecognition(trainDir,testDir,alpha=0.07,maxCycles=50):
     data,label=loadData(trainDir)
     weigh=gradAscent(data,label,alpha,maxCycles)
     classfy(testDir,weigh)
-    
-        
+
+
+
+print '开始执行'
+digitRecognition('train','test')
+
     
     
     
