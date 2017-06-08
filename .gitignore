@@ -94,3 +94,5 @@ ENV/
 将删除 .idea/
 将忽略仓库 Kaggle-Solution/
 将忽略仓库 MachineLearning/
+
+./.idea
