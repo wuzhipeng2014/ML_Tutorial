@@ -1,8 +1,12 @@
 # -*- coding: utf-8 -*-
 """
 Created on Tue Dec 09 21:54:00 2014
-
 @author: wepon
+
+**********************************************************************
+参考博客地址: http://blog.csdn.net/u012162613/article/details/41844495
+*********************************************************************
+
 
 程序说明：
 loadData函数
@@ -59,8 +63,8 @@ def gradAscent(dataArray,labelArray,alpha,maxCycles):
     weigh=ones((n,1)) 
     for i in range(maxCycles):
         h=sigmoid(dataMat*weigh)
-        error=labelMat-h    #size:m*1
-        weigh=weigh+alpha*dataMat.transpose()*error
+        error=labelMat-h    #size:m*1  #
+        weigh=weigh+alpha*dataMat.transpose()*error #逻辑回归的参数更新
     return weigh
 
 def classfy(testdir,weigh):
